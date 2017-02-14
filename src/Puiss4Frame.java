@@ -1,5 +1,4 @@
-import java.awt.BorderLayout;
-import java.awt.Frame;
+import java.awt.*;
 
 public class Puiss4Frame extends Frame {
 	/**
@@ -15,5 +14,6 @@ public class Puiss4Frame extends Frame {
 		this.setTitle("Puissance 4");
 		this.setSize(LARGEUR,HAUTEUR);
 		this.setLayout(new BorderLayout());
+		this.setBackground(Color.GRAY);
 	}
 }
