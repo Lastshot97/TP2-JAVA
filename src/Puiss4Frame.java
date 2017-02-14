@@ -15,5 +15,7 @@ public class Puiss4Frame extends Frame {
 		this.setSize(LARGEUR,HAUTEUR);
 		this.setLayout(new BorderLayout());
 		this.setBackground(Color.GRAY);
+		
+		this.setVisible(true);
 	}
 }
