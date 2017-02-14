@@ -21,20 +21,21 @@ public class GrillePuiss4Canvas extends Canvas {
 	
 	public void paint(Graphics g) {
 	    this.setSize(LARGEUR, HAUTEUR);
-	    this.setBackground(Color.YELLOW);
+	    this.setBackground(Color.GREEN);
 
-	    int coordXcarre = (LARGEUR - (modele.getNbColonnes() * DIM_CARRE) / 2);
-	    int coordYcarre = (HAUTEUR - (modele.getNbLignes() * DIM_CARRE) / 2);
+	    int coordXcarre = ((LARGEUR - (modele.getNbColonnes() * DIM_CARRE)) / 2);
+	    int coordYcarre = ((HAUTEUR - (modele.getNbLignes() * DIM_CARRE)) / 2);
+	    
+	    g.setColor(Color.BLUE);
+	    g.fillRect(coordXcarre, coordYcarre, DIM_CARRE * modele.getNbColonnes(), DIM_CARRE * modele.getNbLignes());
 	    
 	    for (int ligne = 0; ligne < modele.getNbLignes(); ligne ++){
 	    	for (int col = 0; col < modele.getNbColonnes(); col++){
-	    		g.setColor(Color.BLUE);
-	    		g.fillRect(coordXcarre, coordYcarre, DIM_CARRE, DIM_CARRE);
 	    		g.setColor(Color.WHITE);
 	    		g.fillOval(coordXcarre + 10, coordYcarre + 10, DIM_CARRE - 20, DIM_CARRE - 20);
 	    		coordXcarre = coordXcarre + DIM_CARRE; 		
 	    	}
-	    	coordXcarre = (LARGEUR - (modele.getNbColonnes() * DIM_CARRE) / 2);
+	    	coordXcarre = ((LARGEUR - (modele.getNbColonnes() * DIM_CARRE)) / 2);
 	    	coordYcarre = coordYcarre + DIM_CARRE;
 	    }
 	}
