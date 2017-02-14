@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.Frame;
 
 public class Puiss4Frame extends Frame {
@@ -13,6 +14,6 @@ public class Puiss4Frame extends Frame {
 	public Puiss4Frame() {
 		this.setTitle("Puissance 4");
 		this.setSize(LARGEUR,HAUTEUR);
-		
+		this.setLayout(new BorderLayout());
 	}
 }
