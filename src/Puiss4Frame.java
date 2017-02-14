@@ -2,6 +2,7 @@ import java.awt.*;
 
 import puisQuatre.Puis4;
 
+
 public class Puiss4Frame extends Frame {
 	/**
 	 * 
@@ -19,8 +20,14 @@ public class Puiss4Frame extends Frame {
 		this.setLayout(new BorderLayout());
 		this.setBackground(Color.GRAY);
 		
-		Canvas grillePuiss4Canvas = new grillePuiss4Canvas(modele);
-	
+		Canvas grillePuiss4Canvas = new GrillePuiss4Canvas(modele);
+	    Button abandonner = new Button ("Abandonner");
+	    
+	    this.add(grillePuiss4Canvas,BorderLayout.CENTER);
+	    this.add(abandonner,BorderLayout.SOUTH);
+	    
+	    this.addWindowListener(new CloseWindowListener(this));
+	    
 		this.setVisible(true);
 	}
 }
