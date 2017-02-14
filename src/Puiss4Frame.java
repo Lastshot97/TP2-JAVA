@@ -20,7 +20,7 @@ public class Puiss4Frame extends Frame {
 		this.setBackground(Color.GRAY);
 		
 		Canvas grillePuiss4Canvas = new grillePuiss4Canvas(modele);
-		
+	
 		this.setVisible(true);
 	}
 }
