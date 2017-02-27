@@ -2,12 +2,10 @@ import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Label;
 import java.awt.Panel;
-
-import javax.swing.JDialog;
-
 import puisQuatre.Puis4;
+import java.awt.Dialog;
 
-public class Puis4Dialog extends JDialog{
+public class Puis4Dialog extends Dialog{
 	
 	/**
 	 * 
@@ -41,6 +39,7 @@ public class Puis4Dialog extends JDialog{
 		fermer.addActionListener(new GameCloser(frame,this));
 		rejouer.addActionListener(new replayGame(this,modele));
 		
+		this.setModal(true);
 		this.setVisible(true);
 	}
 }
