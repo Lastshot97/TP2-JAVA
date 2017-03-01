@@ -1,7 +1,5 @@
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
+import java.awt.event.*;
 import puisQuatre.Puis4;
 
 public class grillePuiss4Listener extends MouseAdapter {
@@ -32,6 +30,7 @@ public class grillePuiss4Listener extends MouseAdapter {
 		for (int i = 0; i < tabCoord.length; i++){
 			if (coordXsouris >= tabCoord[i] && coordXsouris <= tabCoord[i] + DimCase){
 				modele.joueurJoue(i);
+				PlaySound.jeton();
 				WaitThread waitThread = new WaitThread(modele);
 				waitThread.start();	
 			}
