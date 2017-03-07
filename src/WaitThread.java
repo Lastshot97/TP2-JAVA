@@ -14,7 +14,9 @@ public class WaitThread extends Thread {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		modele.progJoue();
-		PlaySound.jeton();
+		if (! modele.estTermine()){
+			modele.progJoue();
+			PlaySound.jeton();
+		}
 	}
 }
