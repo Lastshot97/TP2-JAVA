@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Button;
+import java.awt.Color;
 import java.awt.Label;
 import java.awt.Panel;
 import puisQuatre.Puis4;
@@ -18,6 +19,7 @@ public class Puis4Dialog extends Dialog{
 		this.setLocationRelativeTo(frame);
 		this.setResizable(false);
 		this.setLayout(new BorderLayout());
+		this.setBackground(Color.DARK_GRAY);  //TODO -> choisir des *bonnes* couleurs
 		
 		String msg;
 		if (aGagner){
@@ -31,13 +33,20 @@ public class Puis4Dialog extends Dialog{
 		
 		Panel mesButtons = new Panel();
 		Button fermer = new Button("Fermer");
+		fermer.setBackground(Color.GRAY);
+		Button menu = new Button("Menu");
+		menu.setBackground(Color.BLUE);
 		Button rejouer = new Button("Rejouer");
-		mesButtons.add(fermer);
-		mesButtons.add(rejouer);
-		this.add(mesButtons, BorderLayout.SOUTH);	
+		rejouer.setBackground(Color.GRAY);
 		
 		fermer.addActionListener(new GameCloser(frame,this));
+		menu.addActionListener(new goMenuListener(frame, this));
 		rejouer.addActionListener(new replayGame(this,modele));
+		
+		mesButtons.add(fermer);
+		mesButtons.add(menu);
+		mesButtons.add(rejouer);
+		this.add(mesButtons, BorderLayout.SOUTH);	
 		
 		this.setModal(true);
 		this.setVisible(true);
