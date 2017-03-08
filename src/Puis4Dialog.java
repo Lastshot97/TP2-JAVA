@@ -40,7 +40,7 @@ public class Puis4Dialog extends Dialog{
 		rejouer.setBackground(Color.GRAY);
 		
 		fermer.addActionListener(new GameCloser(frame,this));
-		menu.addActionListener(new goMenuListener(frame, this));
+		menu.addActionListener(new goMenuListener(frame));
 		rejouer.addActionListener(new replayGame(this,modele));
 		
 		mesButtons.add(fermer);
