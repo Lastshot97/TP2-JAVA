@@ -9,6 +9,7 @@ public class PlaySound {
 			AudioInputStream inputStream = AudioSystem.getAudioInputStream(f);
 			clip.open(inputStream);
 			clip.start(); 
+
 		} catch (NullPointerException e) {
 			System.err.println("mauvais fichier son");
 		}catch (Exception ex){
