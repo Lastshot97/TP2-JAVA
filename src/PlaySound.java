@@ -10,9 +10,9 @@ public class PlaySound {
 			clip.open(inputStream);
 			clip.start(); 
 		} catch (NullPointerException e) {
-			System.out.println("mauvais fichier son");
+			System.err.println("mauvais fichier son");
 		}catch (Exception ex){
-			System.out.println(ex);
+			System.err.println(ex);
 		}
     }
 }
