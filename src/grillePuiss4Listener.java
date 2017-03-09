@@ -32,8 +32,6 @@ public class grillePuiss4Listener extends MouseAdapter {
 		
 		for (int i = 0; i < tabCoord.length; i++){
 			if (coordXsouris >= tabCoord[i] && coordXsouris <= tabCoord[i] + DimCase){
-				System.out.println(nbrJoueur);
-				System.out.println(waitThread.getNbrProg());
 				if (nbrJoueur == waitThread.getNbrProg()){
 					modele.joueurJoue(i);
 					nbrJoueur ++;

@@ -1,4 +1,3 @@
-import puisQuatre.Puis4;
 
 public class LanceFrame {
 

@@ -32,7 +32,7 @@ public class Puiss4Frame extends Frame implements Observer {
 		    this.add(grillePuiss4Canvas,BorderLayout.CENTER);
 		    this.add(abandonner,BorderLayout.SOUTH);
 		    
-		    abandonner.addActionListener(new ButtonAbandonListener(modele));
+		    abandonner.addActionListener(new goMenuListener(this));
 		    grillePuiss4Canvas.addMouseListener(new grillePuiss4Listener(modele,grillePuiss4Canvas));
 		    this.addWindowListener(new CloseWindowListener(this));
 		    
