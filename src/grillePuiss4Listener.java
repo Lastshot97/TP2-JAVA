@@ -7,6 +7,8 @@ public class grillePuiss4Listener extends MouseAdapter {
 	private Puis4 modele;
 	private GrillePuiss4Canvas grille;
 	
+	private static int nbrJoueur = 0;
+	
 	public grillePuiss4Listener(Puis4 modele, GrillePuiss4Canvas grillePuiss4Canvas) {
 		this.modele = modele;
 		this.grille = grillePuiss4Canvas;
@@ -26,13 +28,18 @@ public class grillePuiss4Listener extends MouseAdapter {
 		int coordXsouris = e.getX();
 		int DimCase = grille.getDimCase();
 		int[] tabCoord = getCoordCol();
+		WaitThread waitThread = new WaitThread(modele);
 		
 		for (int i = 0; i < tabCoord.length; i++){
 			if (coordXsouris >= tabCoord[i] && coordXsouris <= tabCoord[i] + DimCase){
-				modele.joueurJoue(i);
-				PlaySound.jeton();
-				WaitThread waitThread = new WaitThread(modele);
-				waitThread.start();	
+				System.out.println(nbrJoueur);
+				System.out.println(waitThread.getNbrProg());
+				if (nbrJoueur == waitThread.getNbrProg()){
+					modele.joueurJoue(i);
+					nbrJoueur ++;
+					PlaySound.jeton();
+					waitThread.start();
+				}			
 			}
 		}				
 	}
