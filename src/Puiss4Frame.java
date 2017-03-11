@@ -27,10 +27,14 @@ public class Puiss4Frame extends Frame implements Observer {
 			this.setBackground(Color.GRAY);
 			
 			grillePuiss4Canvas = new GrillePuiss4Canvas(modele);
+		    Label niveau = new Label("niveau : " + modele.getNiveauJeu());
 		    Button abandonner = new Button ("Abandonner");
+		    Panel bottom = new Panel(new FlowLayout(FlowLayout.CENTER));
+		    bottom.add(niveau);
+		    bottom.add(abandonner);
 		      
-		    this.add(grillePuiss4Canvas,BorderLayout.CENTER);
-		    this.add(abandonner,BorderLayout.SOUTH);
+		    this.add(grillePuiss4Canvas, BorderLayout.CENTER);
+		    this.add(bottom, BorderLayout.SOUTH);
 		    
 		    abandonner.addActionListener(new goMenuListener(this));
 		    grillePuiss4Canvas.addMouseListener(new grillePuiss4Listener(modele,grillePuiss4Canvas));
