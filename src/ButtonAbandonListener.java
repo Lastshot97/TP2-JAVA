@@ -15,5 +15,4 @@ public class ButtonAbandonListener implements ActionListener {
 	public void actionPerformed(ActionEvent a) {
 		modele.nouveauJeu(modele.getNbColonnes(), modele.getNbLignes(), modele.getNiveauJeu());
 	}
-
 }

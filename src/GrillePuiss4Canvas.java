@@ -35,7 +35,7 @@ public class GrillePuiss4Canvas extends Canvas {
 
 	    this.setBackground(Color.GREEN);
 	    
-	    DIM_CASE = (((this.getWidth() / modele.getNbColonnes()) + (this.getHeight() / modele.getNbLignes())) / 4) ;
+	    DIM_CASE = (((this.getWidth() / modele.getNbColonnes()) + (this.getHeight() / modele.getNbLignes())) / 3) ;
 		coordXgrille = ((this.getWidth() - (modele.getNbColonnes() * DIM_CASE)) / 2);
 		coordYgrille = ((this.getHeight() - (modele.getNbLignes() * DIM_CASE)) / 2);
 		
@@ -56,12 +56,12 @@ public class GrillePuiss4Canvas extends Canvas {
 	    		case Puis4.VIDE :
 	    			g.setColor(Color.WHITE);
 	    			break;
-	    		}	    			    		
+	    		}	    
 	    		g.fillOval(coordXcase + 5, coordYcase + 5 , DIM_CASE - 5, DIM_CASE - 5);
 	    		coordXcase = coordXcase + DIM_CASE; 		
 	    	}
 	    	coordXcase = coordXgrille;
-	    	coordYcase = coordYcase + DIM_CASE;
+	    	coordYcase = coordYcase + DIM_CASE;    	
 	    }
 	}
 }

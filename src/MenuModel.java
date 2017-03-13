@@ -11,6 +11,7 @@ public class MenuModel extends Observable{
 		return niveau;
 	}
 	
+	
 	public void setNiveau(int niveau) {
 		this.niveau = niveau;
 		this.setChanged();

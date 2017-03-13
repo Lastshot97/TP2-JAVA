@@ -16,11 +16,11 @@ public class WaitThread extends Thread {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		if (! modele.estTermine()){
+		//if (! modele.estTermine()){
 			modele.progJoue();
 			nbrProg ++;
 			PlaySound.jeton();
-		}
+		//}
 	}
 	
 	public int getNbrProg(){
