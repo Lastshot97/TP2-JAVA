@@ -1,61 +1,45 @@
 import java.awt.*;
-import java.util.Observable;
-import java.util.Observer;
+
+import javax.swing.JButton;
 
 import puisQuatre.Puis4;
 
 
-public class Puiss4Frame extends Frame implements Observer {
+public class Puiss4Frame extends Frame  {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	// Attributes
-		private static final int LARGEUR = 900;
-		private static final int HAUTEUR = 600;
-		private Puis4 modele;
-		private GrillePuiss4Canvas grillePuiss4Canvas ;
+	private static final int LARGEUR = 900;
+	private static final int HAUTEUR = 600;
+	private GrillePuiss4Canvas grille;
+	
+	// Method
+	public Puiss4Frame(Puis4 modele) {	
 		
-		// Method
-		public Puiss4Frame(Puis4 modele) {
-			this.modele = modele;
-			modele.addObserver(this);
-			
-			this.setTitle("Puissance 4");
-			this.setSize(LARGEUR,HAUTEUR);
-			this.setLayout(new BorderLayout());
-			this.setBackground(Color.GRAY);
-			
-			grillePuiss4Canvas = new GrillePuiss4Canvas(modele);
-		    Label niveau = new Label("niveau : " + modele.getNiveauJeu());
-		    Button abandonner = new Button ("Abandonner");
-		    Panel bottom = new Panel(new FlowLayout(FlowLayout.CENTER));
-		    bottom.add(niveau);
-		    bottom.add(abandonner);
-		      
-		    this.add(grillePuiss4Canvas, BorderLayout.CENTER);
-		    this.add(bottom, BorderLayout.SOUTH);
-		    
-		    abandonner.addActionListener(new goMenuListener(this,modele));
-		    grillePuiss4Canvas.addMouseListener(new grillePuiss4Listener(modele,grillePuiss4Canvas));
-		    this.addWindowListener(new CloseWindowListener(this));
-		    
-			this.setVisible(true);
-		}
-		
-		public static int getLargeur(){
-			return LARGEUR;
-		}
-		
-		public static int getHauteur(){
-			return HAUTEUR;
-		}
+		this.setTitle("Puissance 4");
+		this.setSize(LARGEUR,HAUTEUR);
+		this.setLayout(new BorderLayout());
 
-		@Override
-		public void update(Observable obs, Object obj) {
-			grillePuiss4Canvas.repaint();
-			if (modele.estTermine()){
-				new Puis4Dialog(this,modele.estJoueurGagne(),modele);
-			}		
-		}
+		grille = new GrillePuiss4Canvas(modele,this);	
+	    Button abandonner = new Button ("Abandonner");
+	      
+	    this.add(grille,BorderLayout.CENTER);
+	    this.add(abandonner,BorderLayout.SOUTH);
+	    
+	    abandonner.addActionListener(new ButtonAbandonListener(modele,grille));
+	    grille.addMouseListener(new grillePuiss4Listener(modele,grille)); 
+	    this.addWindowListener(new CloseWindowListener(this));
+	    
+		this.setVisible(true);
+	}
+	
+	public int getLargeur(){
+		return LARGEUR;
+	}
+	
+	public int getHauteur(){
+		return HAUTEUR;
+	}
 }

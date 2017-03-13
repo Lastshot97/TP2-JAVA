@@ -1,54 +1,44 @@
 import java.awt.BorderLayout;
 import java.awt.Button;
-import java.awt.Color;
-import java.awt.Label;
-import java.awt.Panel;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import puisQuatre.Puis4;
 import java.awt.Dialog;
+import java.awt.Panel;
 
 public class Puis4Dialog extends Dialog{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	public Puis4Dialog(Puiss4Frame frame, boolean aGagner, Puis4 modele){
+	public Puis4Dialog(Puiss4Frame frame, Puis4 modele, GrillePuiss4Canvas grille){		
 		super(frame, "PARTIE TERMINEE", false);
-		this.setSize(Puiss4Frame.getLargeur() / 4, Puiss4Frame.getHauteur() / 4);
-		this.setLocationRelativeTo(frame);
-		this.setResizable(false);
-		this.setLayout(new BorderLayout());
-		this.setBackground(Color.DARK_GRAY);  //TODO -> choisir des *bonnes* couleurs
+
+		JLabel endGame;
 		
-		String msg;
-		if (aGagner){
-			msg = "You Win !";
-		}else{
-			msg = "Try Again ...";
+		if (modele.estJoueurGagne()){		
+			endGame = new JLabel(new ImageIcon("D:/Pictures/Projets/YouWin.jpg"));		
+			this.setSize(280,270);
+		} else{
+			endGame = new JLabel(new ImageIcon("D:/Pictures/Projets/TryAgain.jpg"));
+			this.setSize(420,270);
 		}
 		
-		Label l1 = new Label(msg);
-		this.add(l1, BorderLayout.CENTER);
+		this.setLocationRelativeTo(frame);
+		this.setModalityType(DEFAULT_MODALITY_TYPE);
+		this.setLayout(new BorderLayout());
+		
+		this.add(endGame, BorderLayout.CENTER);
 		
 		Panel mesButtons = new Panel();
 		Button fermer = new Button("Fermer");
-		fermer.setBackground(Color.GRAY);
-		Button menu = new Button("Menu");
-		menu.setBackground(Color.BLUE);
 		Button rejouer = new Button("Rejouer");
-		rejouer.setBackground(Color.GRAY);
-		
-		fermer.addActionListener(new GameCloser(frame,this));
-		menu.addActionListener(new goMenuListener(frame,modele));
-		rejouer.addActionListener(new replayGame(this,modele));
-		
 		mesButtons.add(fermer);
-		mesButtons.add(menu);
 		mesButtons.add(rejouer);
 		this.add(mesButtons, BorderLayout.SOUTH);	
 		
-		this.setModal(true);
+		fermer.addActionListener(new GameCloser(frame,this));
+		rejouer.addActionListener(new replayGame(this,modele,grille));
+		
 		this.setVisible(true);
 	}
 }
