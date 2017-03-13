@@ -31,12 +31,15 @@ public class Puis4Dialog extends Dialog{
 		
 		Panel mesButtons = new Panel();
 		Button fermer = new Button("Fermer");
+		Button menu = new Button("menu");
 		Button rejouer = new Button("Rejouer");
 		mesButtons.add(fermer);
+		mesButtons.add(menu);
 		mesButtons.add(rejouer);
 		this.add(mesButtons, BorderLayout.SOUTH);	
 		
 		fermer.addActionListener(new GameCloser(frame,this));
+		menu.addActionListener(new goMenuListener(frame, modele));
 		rejouer.addActionListener(new replayGame(this,modele,grille));
 		
 		this.setVisible(true);
