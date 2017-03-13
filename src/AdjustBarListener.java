@@ -16,7 +16,7 @@ public class AdjustBarListener implements AdjustmentListener {
 	@Override
 	public void adjustmentValueChanged(AdjustmentEvent e) {
 		m.setNiveauJeu(e.getValue());
-		affNivLabel.setText("niveau choisi TEST : " + m.getNiveauJeu());
+		affNivLabel.setText("niveau choisi : " + m.getNiveauJeu());
 	}
 
 }
