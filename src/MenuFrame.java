@@ -1,12 +1,4 @@
-import java.awt.Button;
-import java.awt.Choice;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Frame;
-import java.awt.GridLayout;
-import java.awt.Label;
-import java.awt.Panel;
-import java.awt.Scrollbar;
+import java.awt.*;
 
 public class MenuFrame extends Frame{
 
