@@ -23,25 +23,6 @@ public class MenuFrame extends Frame {
 		this.setResizable(false);
 		this.setLayout(null);
 		
-		// change l'icone de la fenetre
-		try{
-			Image icon = ImageIO.read(this.getClass().getResourceAsStream("icon.png"));
-			this.setIconImage(icon);
-		} catch(IOException e){
-			e.printStackTrace();
-		}
-		
-		// change le fond de la fenetre
-		try{
-			Image fond = ImageIO.read(this.getClass().getResourceAsStream("fond.png"));
-			ImageCanvas ic = new ImageCanvas(fond);
-			ic.setSize(400, 400);
-			//ic.setVisible(false);
-			this.add(ic);
-		} catch(IOException e){
-			e.printStackTrace();
-		}
-		
 		Button jouer = new Button ("Nouvelle partie");		
 		jouer.setLocation(350, 277);
 		jouer.setSize(150, 50);
@@ -58,9 +39,27 @@ public class MenuFrame extends Frame {
 		parametre.setSize(150, 50);
 		this.add(parametre);
 		
-	    this.addWindowListener(new CloseWindowListener(this));
-	    
+		// change l'icone de la fenetre
+		try{
+			Image icon = ImageIO.read(this.getClass().getResourceAsStream("icon.png"));
+			this.setIconImage(icon);
+		} catch(IOException e){
+			e.printStackTrace();
+		}
 		
+		// change le fond de la fenetre
+		try{
+			Image fond = ImageIO.read(this.getClass().getResourceAsStream("fond.png"));
+			ImageCanvas ic = new ImageCanvas(fond);
+			ic.setSize(LARGEUR, HAUTEUR);
+			//ic.setVisible(false);
+			this.add(ic);
+		} catch(IOException e){
+			e.printStackTrace();
+		}		
+		
+	    this.addWindowListener(new CloseWindowListener(this));
+	    		
 		PlayMusic.play("menu.wav");
 		this.setVisible(true);
 	}
