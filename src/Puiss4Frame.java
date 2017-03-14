@@ -19,6 +19,7 @@ public class Puiss4Frame extends Frame  {
 		this.setTitle("Puissance 4");
 		this.setSize(LARGEUR,HAUTEUR);
 		this.setLayout(new BorderLayout());
+		PlayMusic.play("jeu.wav");
 
 		grille = new GrillePuiss4Canvas(modele,this);	
 	    Button abandonner = new Button ("Abandonner");

@@ -49,5 +49,6 @@ public class MenuFrame extends Frame {
 	    this.addWindowListener(new CloseWindowListener(this));
 	    
 		this.setVisible(true);
+		PlayMusic.play("menu.wav");
 	}
 }

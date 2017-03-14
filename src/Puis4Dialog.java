@@ -13,12 +13,14 @@ public class Puis4Dialog extends Dialog{
 	public Puis4Dialog(Puiss4Frame frame, Puis4 modele, GrillePuiss4Canvas grille){		
 		super(frame, "PARTIE TERMINEE", false);
 
-		JLabel endGame;
+		JLabel endGame;  // JLABEL ?
 		
-		if (modele.estJoueurGagne()){		
-			endGame = new JLabel(new ImageIcon("D:/Pictures/Projets/YouWin.jpg"));		
+		if (modele.estJoueurGagne()){
+			// PlayMusic.play("win.wav");  // TODO implementer
+			endGame = new JLabel(new ImageIcon("D:/Pictures/Projets/YouWin.jpg"));	// FIXME mettre une valeur local	
 			this.setSize(280,270);
 		} else{
+			// PlayMusic.play("lose.wav");  //TODO implementer
 			endGame = new JLabel(new ImageIcon("D:/Pictures/Projets/TryAgain.jpg"));
 			this.setSize(420,270);
 		}
