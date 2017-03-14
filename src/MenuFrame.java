@@ -21,7 +21,8 @@ public class MenuFrame extends Frame {
 		
 		Label nivLabel = new Label("niveau :");
 		Scrollbar nSB = new Scrollbar(Scrollbar.HORIZONTAL, 1, 1, 1, 5);
-		Label affNivLabel = new Label("niveau choisi TEST: 1 ");  
+
+		Label affNivLabel = new Label("niveau choisi : 1 ");
 		Panel nivPanel = new Panel(new GridLayout(1, 3));
 		nivPanel.add(nivLabel);
 		nivPanel.add(nSB);
@@ -46,7 +47,6 @@ public class MenuFrame extends Frame {
 	    jouer.addActionListener(new JouerListener(this, dimChoice.getSelectedItem(),modele));
 	    
 	    this.addWindowListener(new CloseWindowListener(this));
-	    
 	    
 		this.setVisible(true);
 	}
