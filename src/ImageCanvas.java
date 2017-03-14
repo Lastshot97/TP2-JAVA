@@ -3,6 +3,9 @@ import java.awt.Graphics;
 import java.awt.Image;
 
 public class ImageCanvas extends Canvas{
+
+	private static final long serialVersionUID = 1L;
+	
 	private Image image;
 	
 	public ImageCanvas(Image image){

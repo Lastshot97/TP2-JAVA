@@ -1,4 +1,7 @@
 import java.awt.*;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import puisQuatre.Puis4;
 
@@ -12,7 +15,7 @@ public class Puiss4Frame extends Frame  {
 	private static final int HAUTEUR = 600;
 	private Button abandonner;
 	private Button goMenu;
-	private GrillePuiss4Canvas grille;
+	//private GrillePuiss4Canvas grille;
 	
 	// Method
 	public Puiss4Frame(Puis4 modele) {	
@@ -22,7 +25,15 @@ public class Puiss4Frame extends Frame  {
 		this.setLayout(new BorderLayout());
 		PlayMusic.play("jeu.wav");
 
-		grille = new GrillePuiss4Canvas(modele,this);	
+		Image imageFontCanvas = null;
+		try{
+			imageFontCanvas = ImageIO.read(this.getClass().getResourceAsStream("puissance4.jpg"));
+		} catch(IOException e){
+			System.err.println("Erreur lors du chargement de l'image de font du canvas : Puiss4Frame");
+			e.printStackTrace();
+		}
+		
+		GrillePuiss4Canvas grille = new GrillePuiss4Canvas(modele, this, imageFontCanvas);	
 		
 	    abandonner = new Button ("Abandonner");
 	    abandonner.setBackground(new Color(133,133,133));

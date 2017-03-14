@@ -2,6 +2,7 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
@@ -16,10 +17,12 @@ public class GrillePuiss4Canvas extends Canvas {
 	private int coordXgrille;
 	private int coordYgrille;
 	private Puiss4Frame frame;
+	private Image image;
 
-	public GrillePuiss4Canvas(Puis4 modele, Puiss4Frame frame) {
+	public GrillePuiss4Canvas(Puis4 modele, Puiss4Frame frame, Image image) {
 		this.modele = modele;
 		this.frame = frame;
+		this.image = image;
 	}
 	
 	public int getCoordXgrille() {
@@ -35,29 +38,30 @@ public class GrillePuiss4Canvas extends Canvas {
 		DIM_CASE = (((this.getWidth() / modele.getNbColonnes()) + (this.getHeight() / modele.getNbLignes())) / 3) ;
 		coordXgrille = ((this.getWidth() - (modele.getNbColonnes() * DIM_CASE)) / 2);
 		coordYgrille = ((this.getHeight() - (modele.getNbLignes() * DIM_CASE)) / 2);
-	    		
-		grille(true); 
+
+		g.drawImage(image, 0, 0, null);		
+		grille(-1,-1); 
 	}
 	
 	public void joue(int colonne, boolean estJoueur) throws Exception{
 		Graphics g = this.getGraphics();
-		Color piont;
+		int ligne = (modele.getNbLignes() - 1) - getLigne(colonne);
+		Color pion;
+		
 		if (estJoueur){
-			piont = Color.RED;
+			pion = Color.RED;
 		}else{
-			piont = Color.YELLOW;
+			pion = Color.YELLOW;
 		}
-		for (int y = coordYgrille; y < coordYgrille + getLigne(colonne) * DIM_CASE; y += DIM_CASE / 2){
-			g.setColor(piont);
+		for (int y = coordYgrille; y < coordYgrille + ligne * DIM_CASE; y += DIM_CASE / 2){
+			g.setColor(pion);
 			g.fillOval((coordXgrille + (DIM_CASE * colonne)) + 5, y + 5, DIM_CASE - 5, DIM_CASE - 5);
-			grille(false); 
 			
+			grille(colonne,getLigne(colonne)); 
 			Thread.sleep(50);
-			
-			g.setColor(this.getBackground());
-			g.fillOval((coordXgrille + (DIM_CASE * colonne)) +4, y +4, DIM_CASE - 2, DIM_CASE - 2);
+			g.drawImage(image, 0, 0, null);
 		}
-		grille(true);
+		grille(-1,-1);
 		PlaySound.jeton();
 		
 		if (modele.estTermine()){
@@ -70,10 +74,10 @@ public class GrillePuiss4Canvas extends Canvas {
 		while(modele.getPion(colonne, ligne) == Puis4.VIDE && ligne > 0){
 			ligne--;
 		}
-		return (modele.getNbLignes() - 1) - ligne;
+		return ligne;
 	}
 	
-	public void grille(boolean bool){
+	public void grille(int colonneJouer, int ligneJouer){
 		
 		Graphics g = this.getGraphics();
 		Graphics2D g2 = (Graphics2D)g;
@@ -95,7 +99,7 @@ public class GrillePuiss4Canvas extends Canvas {
 	    		
 	    		area.subtract(new Area(spot)); 
 	    		
-	    		if (bool){
+	    		if (!(col == colonneJouer && ligne == ligneJouer)){	    			
 	    			switch (modele.getPion(col, ligne)) {
 	    			case Puis4.JOUEUR : 
 	    				g2.setColor(Color.RED);	    			
