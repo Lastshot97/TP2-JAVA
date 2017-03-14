@@ -23,20 +23,28 @@ public class MenuFrame extends Frame {
 		this.setResizable(false);
 		this.setLayout(null);
 		
+		Font f = new Font(Font.SERIF, Font.PLAIN, 16);
+		
 		Button jouer = new Button ("Nouvelle partie");		
-		jouer.setLocation(350, 277);
+		jouer.setLocation(370, 277);
 		jouer.setSize(150, 50);
+		jouer.setBackground(new Color(32, 40, 191));
+		jouer.setFont(f);
 		this.add(jouer);
 	    jouer.addActionListener(new JouerListener(this, "7x8", modele));
 		
 		Button regle = new Button ("Regle");		
-		regle.setLocation(350, 370);
+		regle.setLocation(370, 370);
 		regle.setSize(150, 50);
+		regle.setBackground(new Color(21, 27, 127));
+		regle.setFont(f);
 		this.add(regle);
 	    
 		Button parametre = new Button ("Parametre");		
-		parametre.setLocation(350, 462);
+		parametre.setLocation(370, 462);
 		parametre.setSize(150, 50);
+		parametre.setBackground(new Color(11, 13, 64));
+		parametre.setFont(f);
 		this.add(parametre);
 		
 		// change l'icone de la fenetre
