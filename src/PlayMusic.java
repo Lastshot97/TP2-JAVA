@@ -16,7 +16,7 @@ public class PlayMusic {
 		try{
 			stop();
 			File f = new File(monFichier);
-			AudioInputStream inputStream = AudioSystem.getAudioInputStream(f);
+			AudioInputStream inputStream = AudioSystem.getAudioInputStream(f);  //  TODO passer en tant que ressource comme les images
 			clip.open(inputStream);
 			if (jouerEnContinue){
 				clip.loop(Clip.LOOP_CONTINUOUSLY);
