@@ -1,18 +1,18 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dialog;
 import java.awt.Font;
 import java.awt.Frame;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
 
-public class RegleDialog extends Dialog{
+public class RegleDialog extends JDialog{
 
 	/**
 	 * Boite de dialogue qui affiche les règles du puissance 4

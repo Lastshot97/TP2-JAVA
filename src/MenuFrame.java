@@ -28,7 +28,7 @@ public class MenuFrame extends Frame {
 		jouer.setBackground(new Color(32, 40, 191));
 		jouer.setFont(f);
 		this.add(jouer);
-	    jouer.addActionListener(new JouerListener(this, "7x8", modele));
+	    jouer.addActionListener(new ButtonNewGameListener(this, modele));
 		
 		Button regle = new Button ("Regle");		
 		regle.setLocation(370, 370);
