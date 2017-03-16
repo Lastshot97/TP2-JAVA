@@ -23,7 +23,7 @@ public class Puiss4Frame extends Frame  {
 		this.setTitle("Puissance 4");
 		this.setSize(LARGEUR,HAUTEUR);
 		this.setLayout(new BorderLayout());
-		PlayMusic.play("jeu.wav");
+		PlayMusic.play("jeu.wav", true);
 
 		Image imageFontCanvas = null;
 		try{
@@ -41,10 +41,16 @@ public class Puiss4Frame extends Frame  {
 	    goMenu = new Button ("Retour au Menu");	
 	    goMenu.setBackground(new Color(133,133,133));
 	    
+	    Button sauvegarger = new Button ("Sauvegarder");
+	    sauvegarger.setBackground(new Color(133,133,133));
+	    
 	    Panel bottom = new Panel();
-	    bottom.setLayout(new GridLayout(1,5));
+	    bottom.setLayout(new GridLayout(1,7));
 	    bottom.setPreferredSize(new Dimension(LARGEUR,30));
-	    bottom.add(new Panel()); bottom.add(abandonner); bottom.add(new Panel()); bottom.add(goMenu); bottom.add(new Panel());
+	    bottom.add(new Panel()); bottom.add(abandonner); 
+	    bottom.add(new Panel()); bottom.add(goMenu); 
+	    bottom.add(new Panel()); bottom.add(sauvegarger);
+	    bottom.add(new Panel());
 
 	    bottom.setBackground(Color.DARK_GRAY);
 	      
@@ -53,6 +59,7 @@ public class Puiss4Frame extends Frame  {
 	    
 	    abandonner.addActionListener(new ButtonAbandonListener(modele, grille));
 	    goMenu.addActionListener(new goMenuListener(this, modele));
+	    sauvegarger.addActionListener(new SauvListener(modele));
 	    grille.addMouseListener(new grillePuiss4Listener(modele, grille)); 
 	    this.addWindowListener(new CloseWindowListener(this));
 	    

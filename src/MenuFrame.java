@@ -39,13 +39,15 @@ public class MenuFrame extends Frame {
 		regle.setBackground(new Color(21, 27, 127));
 		regle.setFont(f);
 		this.add(regle);
+		regle.addActionListener(new RegleListener(this));
 	    
-		Button parametre = new Button ("Parametre");		
-		parametre.setLocation(370, 462);
-		parametre.setSize(150, 50);
-		parametre.setBackground(new Color(11, 13, 64));
-		parametre.setFont(f);
-		this.add(parametre);
+		Button charger = new Button ("Charger une partie");		
+		charger.setLocation(370, 462);
+		charger.setSize(150, 50);
+		charger.setBackground(new Color(11, 13, 64));
+		charger.setFont(f);
+		this.add(charger);
+		charger.addActionListener(new ChargerListener(this));
 		
 		// change l'icone de la fenetre
 		try{
@@ -68,7 +70,7 @@ public class MenuFrame extends Frame {
 		
 	    this.addWindowListener(new CloseWindowListener(this));
 	    		
-		PlayMusic.play("menu.wav");
+		PlayMusic.play("menu.wav", true);
 		this.setVisible(true);
 	}
 }
