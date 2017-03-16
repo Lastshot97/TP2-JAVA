@@ -10,9 +10,6 @@ import puisQuatre.Puis4;
 
 public class MenuFrame extends Frame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1328756640538025065L;
 	private static final int LARGEUR = 900;
 	private static final int HAUTEUR = 600;
@@ -60,7 +57,6 @@ public class MenuFrame extends Frame {
 			Image fond = ImageIO.read(this.getClass().getResourceAsStream("fond.png"));
 			ImageCanvas ic = new ImageCanvas(fond);
 			ic.setSize(LARGEUR, HAUTEUR);
-			//ic.setVisible(false);
 			this.add(ic);
 		} catch(IOException e){
 			e.printStackTrace();
