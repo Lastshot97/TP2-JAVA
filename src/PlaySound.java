@@ -5,11 +5,6 @@ public class PlaySound {
 	
 	public static void play(String fichier){
 		try{
-			/*if (clip.isRunning()){
-				clip.stop();
-				clip.setFramePosition(0);
-				clip.flush();
-			}*/
 			File f = new File(fichier);
 			Clip clip = AudioSystem.getClip();
 			AudioInputStream inputStream = AudioSystem.getAudioInputStream(f);

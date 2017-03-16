@@ -20,7 +20,7 @@ public class SauvListener implements ActionListener {
 			oos = new ObjectOutputStream(new FileOutputStream("sauvegarde.pw4"));
 			oos.writeObject(modele);
 			oos.close();
-			// TODO rajouter un son comfirmant la sauvegarde ( en plus des sons bouttons )
+			PlaySound.sauvegarde();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

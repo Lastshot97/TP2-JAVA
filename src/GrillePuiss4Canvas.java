@@ -53,13 +53,14 @@ public class GrillePuiss4Canvas extends Canvas {
 		}else{
 			pion = Color.YELLOW;
 		}
-		for (int y = coordYgrille; y < coordYgrille + ligne * DIM_CASE; y += DIM_CASE / 2){
+		for (int y = coordYgrille; y < coordYgrille + ligne * DIM_CASE; y += (3*DIM_CASE) / 4){
 			g.setColor(pion);
 			g.fillOval((coordXgrille + (DIM_CASE * colonne)) + 5, y + 5, DIM_CASE - 5, DIM_CASE - 5);
-			
+					
 			grille(colonne,getLigne(colonne)); 
-			Thread.sleep(50);
+			Thread.sleep(80);
 			g.drawImage(image, 0, 0, null);
+			
 		}
 		grille(-1,-1);
 		PlaySound.jeton();

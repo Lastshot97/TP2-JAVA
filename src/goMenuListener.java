@@ -15,7 +15,7 @@ public class goMenuListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		principalFrame.dispose();
-		new MenuFrame(modele);
+		new MenuFrame(modele);		
 	}
 
 }
