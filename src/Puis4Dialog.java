@@ -30,11 +30,11 @@ public class Puis4Dialog extends Dialog{
 			e.printStackTrace();
 		}
 		if (modele.estJoueurGagne()){
-			// PlayMusic.play("win.wav");  // TODO implementer
+			PlayMusic.play("win.wav", false);  // TODO implementer
 			endGame = new JLabel(new ImageIcon(winner));	// FIXME mettre une valeur local	
 			this.setSize(280,270);
 		} else{
-			// PlayMusic.play("lose.wav");  //TODO implementer
+			PlayMusic.play("lose.wav", false);  //TODO implementer
 			endGame = new JLabel(new ImageIcon(tryAgain));
 			this.setSize(420,270);
 		}

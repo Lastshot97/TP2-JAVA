@@ -26,5 +26,10 @@ public class PlaySound {
 	public static void jeton(){
 		play("Menu Selection Click.wav");
 	}
-	
+	public static void boutton() {
+		play("boutton.wav");		
+	}
+	public static void sauvegarde() {
+		play("sauvegarde.wav");	
+	}	
 }

@@ -22,6 +22,7 @@ public class replayGame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		dialogFrame.dispose();
 		modele.nouveauJeu(modele.getNbColonnes(), modele.getNbLignes(),modele.getNiveauJeu());
+		PlayMusic.play("jeu.wav", true);
 		grille.repaint();	
 	}
 
