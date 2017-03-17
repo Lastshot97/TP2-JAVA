@@ -5,9 +5,10 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 
-import puisQuatre.Puis4;
-
-
+//import puisQuatre.Puis4;
+/*
+ * Menu principale de l'application 
+ */
 public class MenuFrame extends Frame {
 
 	private static final long serialVersionUID = 1328756640538025065L;
@@ -48,7 +49,7 @@ public class MenuFrame extends Frame {
 		
 		// change l'icone de la fenetre
 		try{
-			Image icon = ImageIO.read(this.getClass().getResourceAsStream("icon.png"));
+			Image icon = ImageIO.read(this.getClass().getResourceAsStream("icon.PNG"));
 			this.setIconImage(icon);
 		} catch(IOException e){
 			e.printStackTrace();
@@ -66,7 +67,7 @@ public class MenuFrame extends Frame {
 		
 	    this.addWindowListener(new CloseWindowListener(this));
 	    		
-		PlayMusic.play("menu.wav", true);
+		PlayMusic.play("menu.wav",true);
 		this.setVisible(true);
 	}
 }

@@ -13,7 +13,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
 
 public class RegleDialog extends JDialog{
-
 	/**
 	 * Boite de dialogue qui affiche les règles du puissance 4
 	 * 

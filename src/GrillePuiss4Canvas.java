@@ -7,8 +7,14 @@ import java.awt.Rectangle;
 import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 
-import puisQuatre.Puis4;
-
+//import puisQuatre.Puis4;
+/*
+ * Cette classe permet la représentation graphique de la grille 
+ * Elle est constituée des méthodes :
+ * - paint() : calcul les coordonnées (X, Y) de la grille et dessine la grille
+ * - grille(int colonneJouer, int ligneJouer) : dessine la grille et les pions s'y trouvant sauf celui aux coordonnées (colonneJouer, ligneJouer)
+ * - joue(int colonne) : dessine un pion à différent intervalle sur l'axe des Y afin de simuler la chute d'un jeton
+ */
 public class GrillePuiss4Canvas extends Canvas {
 	private static final long serialVersionUID = 1L;
 
@@ -45,7 +51,7 @@ public class GrillePuiss4Canvas extends Canvas {
 	
 	public void joue(int colonne, boolean estJoueur) throws Exception{
 		Graphics g = this.getGraphics();
-		int ligne = (modele.getNbLignes() - 1) - getLigne(colonne);
+		int ligne = (modele.getNbLignes() - 1) - getLigne(colonne); // nombre de ligne vide en partant du haut de la colonne
 		Color pion;
 		
 		if (estJoueur){
@@ -53,24 +59,30 @@ public class GrillePuiss4Canvas extends Canvas {
 		}else{
 			pion = Color.YELLOW;
 		}
+
 		for (int y = coordYgrille; y < coordYgrille + ligne * DIM_CASE; y += (3*DIM_CASE) / 4){
+			//On parcourt l'axe des Y avec un pas de (3*DIM_CASE) / 4 jusqu'à arriver au coordonnée de la dernière case vide
 			g.setColor(pion);
 			g.fillOval((coordXgrille + (DIM_CASE * colonne)) + 5, y + 5, DIM_CASE - 5, DIM_CASE - 5);
-					
+			// On dessine un ovale
 			grille(colonne,getLigne(colonne)); 
-			Thread.sleep(80);
+			// On dessine la grille et les pions qui la compose excepté le pion que l'on joue
+			Thread.sleep(60);
 			g.drawImage(image, 0, 0, null);
-			
+			// On dessine l'image de fond afin d'effacer l'ovale avant de le redessiner 			
 		}
-		grille(-1,-1);
+		grille(-1,-1); 
+		// On dessine la grille et les pions qui la compose (en incluant cette fois-ci le pion "courant"
 		PlaySound.jeton();
-		
+	
 		if (modele.estTermine()){
+			// On test si la partie est terminé après avoir joué, si c'est le cas on appelle la fenêtre de victoire (ou défaite)
 			new Puis4Dialog(frame,modele,this);
 		} 
 	}
 	
 	public int getLigne(int colonne){
+		// But : Calcul le nombre de ligne vide à parcourir
 		int ligne = (modele.getNbLignes() - 1);
 		while(modele.getPion(colonne, ligne) == Puis4.VIDE && ligne > 0){
 			ligne--;
@@ -88,9 +100,10 @@ public class GrillePuiss4Canvas extends Canvas {
 		
 		Rectangle rect = new Rectangle(coordXgrille,  coordYgrille, DIM_CASE * modele.getNbColonnes() + 5, DIM_CASE * modele.getNbLignes() + 5);
 		Area area = new Area(rect);
+		// On définit une nouvelle zone, un rectangle, représentant notre grille
 		
-		for (int ligne = modele.getNbLignes() - 1; ligne >= 0; ligne --){
-	    	for (int col = 0; col < modele.getNbColonnes(); col ++){
+		for (int ligne = modele.getNbLignes() - 1; ligne >= 0; ligne --){ // On parcourt chaque ligne de la grille
+	    	for (int col = 0; col < modele.getNbColonnes(); col ++){ // et chaque colonne
 	    		
 	    		Ellipse2D spot = new Ellipse2D.Float(
 	                    (float) coordXcase + 5,
@@ -99,8 +112,9 @@ public class GrillePuiss4Canvas extends Canvas {
 	                    (float) DIM_CASE - 5);
 	    		
 	    		area.subtract(new Area(spot)); 
+	    		// On soustrait une zone de forme elliptique à notre zone principale, représentant ainsi une case dela grille
 	    		
-	    		if (!(col == colonneJouer && ligne == ligneJouer)){	    			
+	    		if (!(col == colonneJouer && ligne == ligneJouer)){ // On dessine toutes les pièces jouées sauf celle à la case indiquée			
 	    			switch (modele.getPion(col, ligne)) {
 	    			case Puis4.JOUEUR : 
 	    				g2.setColor(Color.RED);	    			
@@ -112,10 +126,13 @@ public class GrillePuiss4Canvas extends Canvas {
 	    				break;
 	    			}	
 	    		}    		    		
-	    		coordXcase = coordXcase + DIM_CASE;	    		
+	    		coordXcase = coordXcase + DIM_CASE; 
+	    		// On obtient les coordonnées de la case voisine suivante en ajoutant au coordonnée actuelle la largeur de la case		
 	    	}
 	    	coordXcase = coordXgrille;
-	    	coordYcase = coordYcase + DIM_CASE;	        
+	    	// On réactulaise la coordonnée X de la case à celle de la première case de chaque ligne
+	    	coordYcase = coordYcase + DIM_CASE;	
+	    	// On obtient les coordonnées de la case du dessous en ajoutant au coordonnée actuelle la hauteur de la case
 		} 
 		g2.setColor(Color.BLUE);
         g2.fill(area);

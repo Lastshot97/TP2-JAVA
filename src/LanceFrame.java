@@ -1,5 +1,7 @@
-import puisQuatre.Puis4;
-
+//import puisQuatre.Puis4;
+/*
+ * Main permettant le lancement de l'application
+ */
 public class LanceFrame {
 
 	public static void main(String[] args) {

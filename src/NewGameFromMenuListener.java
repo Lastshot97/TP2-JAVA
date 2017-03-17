@@ -6,8 +6,10 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JScrollBar;
 
-import puisQuatre.Puis4;
-
+//import puisQuatre.Puis4;
+/*
+ * Cette classe associe un Listener au bouton "Nouvelle Partie" du menu principale
+ */
 public class NewGameFromMenuListener implements ActionListener {
 
 	private JScrollBar difficulte;

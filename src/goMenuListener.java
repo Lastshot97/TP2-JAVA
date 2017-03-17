@@ -1,8 +1,11 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import puisQuatre.Puis4;
-
+//import puisQuatre.Puis4;
+/*
+ * Cette classe permet d'associé un Listener au bouton "Retour au Menu" de la fenêtre de jeu
+ * Rôle : fermer la fenêtre de jeu et lancer le Menu principale
+ */
 public class goMenuListener implements ActionListener {
 	
 	private Puiss4Frame principalFrame;

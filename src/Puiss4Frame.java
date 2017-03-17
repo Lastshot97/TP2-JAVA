@@ -3,9 +3,11 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import puisQuatre.Puis4;
-
-
+//import puisQuatre.Puis4;
+/*
+ * Fenêtre du jeu : contient le canvas représentant la grille du jeu
+ * Est constituée de 3 boutons : Abandonner, Retour au Menu, Sauvegarder
+ */
 public class Puiss4Frame extends Frame  {
 	
 	private static final long serialVersionUID = 1L;

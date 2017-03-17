@@ -1,6 +1,14 @@
-import java.io.File;
-import javax.sound.sampled.*;
 
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+
+import javax.sound.sampled.*;
+/*
+ * Cette classe gère la musique du menu principale
+ * Elle est composée des méthodes :
+ * - init() : permet de récupérer une instance de Clip
+ * - play(String nomFichier, Boolean jouerEnContinue) : permet de jouer un morceau donné en continu ou non
+ */
 public class PlayMusic {
 	private static Clip clip;
 
@@ -12,11 +20,12 @@ public class PlayMusic {
 		}
 	}
 	
-	public static void play(String monFichier, Boolean jouerEnContinue){
+	public static void play(String nomFichier, Boolean jouerEnContinue){
 		try{
 			stop();
-			File f = new File(monFichier);
-			AudioInputStream inputStream = AudioSystem.getAudioInputStream(f);  //  TODO passer en tant que ressource comme les images
+			InputStream audio = PlayMusic.class.getResourceAsStream(nomFichier);
+			BufferedInputStream bis = new BufferedInputStream(audio);
+			AudioInputStream inputStream = AudioSystem.getAudioInputStream(bis); 			
 			clip.open(inputStream);
 			if (jouerEnContinue){
 				clip.loop(Clip.LOOP_CONTINUOUSLY);

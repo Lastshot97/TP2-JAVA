@@ -1,34 +1,32 @@
-import java.awt.Font;
-import java.awt.Frame;
-import java.awt.Dialog.ModalityType;
+import java.awt.*;
+import java.io.IOException;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JScrollBar;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
-import puisQuatre.Puis4;
-
+//import puisQuatre.Puis4;
+/*
+ * Fenêtre du sous menu "nouvelle partie" permettant d'accéder au paramètre de la grille et au niveau de difficulté
+ */
 public class NewGameDialog extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 	
-	public NewGameDialog(Frame menu, Puis4 modele) {
+	public NewGameDialog(Frame menu, Puis4 modele) throws IOException {
 		super(menu, "Nouvelle Partie", false);
 		
 		this.setSize(400,500);
 		this.setLocationRelativeTo(menu);
+		this.setResizable(false);
 		this.setModalityType(ModalityType.APPLICATION_MODAL);
 		this.setLayout(null);
 		
-		JLabel difficulte = new JLabel("Difficult�", JLabel.CENTER);
+		JLabel difficulte = new JLabel("Difficulté", JLabel.CENTER);
 		difficulte.setFont(new Font(Font.DIALOG, Font.CENTER_BASELINE, 60));
 		difficulte.setLocation(50, 20);
 		difficulte.setSize(300, 60);
 		
-		JLabel getDifficulte = new JLabel(new ImageIcon("etoile.png"), JLabel.CENTER);
+		JLabel getDifficulte = new JLabel(new ImageIcon(ImageIO.read(this.getClass().getResourceAsStream("etoile.png"))), JLabel.CENTER);
 		getDifficulte.setFont(new Font(Font.DIALOG, Font.CENTER_BASELINE, 80));
 		getDifficulte.setLocation(50, 90);
 		getDifficulte.setSize(300, 60);

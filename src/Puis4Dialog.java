@@ -3,12 +3,15 @@ import java.awt.Button;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import puisQuatre.Puis4;
+//import puisQuatre.Puis4;
 import java.awt.Dialog;
 import java.awt.Image;
 import java.awt.Panel;
 import java.io.IOException;
-
+/*
+ * Boite de dialogue s'ouvrant lorsque la partie est terminée
+ * Une image de victoire est affichée en cas de victoire et inversement
+ */
 public class Puis4Dialog extends Dialog{
 	
 	private static final long serialVersionUID = 1L;

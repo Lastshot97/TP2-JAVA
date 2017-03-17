@@ -1,9 +1,13 @@
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
-import puisQuatre.Puis4;
-
+//import puisQuatre.Puis4;
+/*
+ * Cette classe permet d'associé un Listener au bouton "Nouvelle Partie" du menu principale
+ * Rôle : lancer la fenêtre de sous menu
+ */
 public class ButtonNewGameListener implements ActionListener {
 
 	private Puis4 modele;
@@ -16,7 +20,11 @@ public class ButtonNewGameListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		new NewGameDialog(menu, modele);
+		try {
+			new NewGameDialog(menu, modele);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

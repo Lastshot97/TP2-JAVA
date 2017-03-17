@@ -1,8 +1,11 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import puisQuatre.Puis4;
-
+//import puisQuatre.Puis4;
+/*
+ * Cette classe permet d'associé un Listener au bouton "Abandonner" de la fenêtre de jeu
+ * Rôle : relancer une partie avec les mêmes paramètres
+ */
 public class ButtonAbandonListener implements ActionListener {
 
 	private Puis4 modele;
