@@ -7,6 +7,8 @@ import java.awt.Rectangle;
 import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 
+import puisQuatre.Puis4;
+
 /**
  * Cette classe permet la représentation graphique de la grille 
  * 

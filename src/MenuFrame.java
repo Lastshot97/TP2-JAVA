@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import puisQuatre.Puis4;
+
 
 /**
  * Cette classe affiche un menu permettant de :

@@ -6,6 +6,8 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JScrollBar;
 
+import puisQuatre.Puis4;
+
 /**
  * Ecouteur permettant de lancer une nouvelle partie depuis la fenêtre de dialogue des paramètres
  * 

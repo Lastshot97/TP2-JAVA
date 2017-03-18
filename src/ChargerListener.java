@@ -3,6 +3,8 @@ import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
+import puisQuatre.Puis4;
+
 /**
  * Ecouteur du boutton permettant de charger la dernière partie sauvegarder
  * 

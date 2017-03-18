@@ -4,6 +4,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
+import puisQuatre.Puis4;
+
 /**
  * Fenetre de dialogue permettant de choisir les paramètres d'une nouvelles partie
  * 

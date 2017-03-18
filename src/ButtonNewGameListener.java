@@ -3,6 +3,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+import puisQuatre.Puis4;
+
 /**
  * Ecouteur du boutton permettant de choisir les <em>paramètres</em> de la partie à lancer
  * 

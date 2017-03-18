@@ -1,3 +1,5 @@
+import puisQuatre.Puis4;
+
 /**
  * Classe permettant le lancement de l'application
  * 
