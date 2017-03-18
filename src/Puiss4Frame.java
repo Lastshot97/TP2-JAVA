@@ -28,7 +28,7 @@ public class Puiss4Frame extends Frame  {
 		PlayMusic.play("jeu.wav", true);
 		
 		try{
-			Image icon = ImageIO.read(this.getClass().getResourceAsStream("icon.png"));
+			Image icon = ImageIO.read(this.getClass().getResourceAsStream("icon.PNG"));
 			this.setIconImage(icon);
 		} catch(IOException e){
 			e.printStackTrace();

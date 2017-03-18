@@ -29,7 +29,7 @@ public class PlaySound {
 	public static void boutton() {
 		play("boutton.wav");		
 	}
-	public static void sauvegarde() {
-		play("sauvegarde.wav");	
-	}	
+	/*public static void sauvegarde() {
+		play("sauvegarde.pw4");	
+	}	*/
 }
