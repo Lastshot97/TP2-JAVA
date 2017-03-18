@@ -20,9 +20,8 @@ import org.jsoup.select.Elements;
  * @author Julien | Hugo
  * 
  */
-private static final long serialVersionUID = 1L;
 public class RegleDialog extends JDialog{
-
+	private static final long serialVersionUID = 1L;
 
 	public RegleDialog(Frame fenetre) {
 		super(fenetre);
