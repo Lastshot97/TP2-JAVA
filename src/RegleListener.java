@@ -1,8 +1,10 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-/*
- * Cette classe associe un Listener au bouton "Regle" du menu principale
- * Rôle : ouvrir la boite de dialogue contenant les règles du jeu 
+/**
+ * Ecouteur permetant de lancer la boite de dialogue affichant les règles
+ * 
+ * @author Julien | Hugo
+ *
  */
 public class RegleListener implements ActionListener {
 

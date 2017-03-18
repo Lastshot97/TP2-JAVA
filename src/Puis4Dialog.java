@@ -8,9 +8,18 @@ import java.awt.Dialog;
 import java.awt.Image;
 import java.awt.Panel;
 import java.io.IOException;
-/*
- * Boite de dialogue s'ouvrant lorsque la partie est terminée
+/**
+ * Boite de dialogue  s'ouvrant lorsque la partie est terminée
+ * 
  * Une image de victoire est affichée en cas de victoire et inversement
+ * affiche le résultat de la partie et propose de :
+ * - fermer le jeu
+ * - rejouer avec les mêmes paramètres
+ * - retourner au menu
+ * 
+ * @author Julien | Hugo
+ * @see Puiss4Frame
+ *
  */
 public class Puis4Dialog extends Dialog{
 	

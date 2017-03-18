@@ -4,10 +4,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-//import puisQuatre.Puis4;
-/*
- * Cette classe associe un Listener au bouton "Sauvegarder" de la fenêtre du jeu
- * Rôle : sauvegarder le modèle du jeu 
+/**
+ * Classe permettant de sauvegarder le cour actuelle de la partie
+ * 
+ * attention : supprime la sauvegarde précédente
+ * 
+ * @author Julien | Hugo
+ * @see ChargerListener
+ *
  */
 public class SauvListener implements ActionListener {
 	private Puis4 modele;

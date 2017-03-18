@@ -5,9 +5,16 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 
-//import puisQuatre.Puis4;
-/*
- * Menu principale de l'application 
+/**
+ * Cette classe affiche un menu permettant de :
+ * 
+ * <ul>
+ * <li>lancer une fenêtre de dialogue pour jouer une nouvelle partie</li>
+ * <li>afficher les règles du jeu d'après Wikipedia</li>
+ * <li>charger la dernière partie sauvegarder</li>
+ * </ul>
+ * @author Julien | Hugo.
+ *
  */
 public class MenuFrame extends Frame {
 

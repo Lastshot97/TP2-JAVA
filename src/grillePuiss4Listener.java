@@ -1,12 +1,16 @@
 
 import java.awt.event.*;
-//import puisQuatre.Puis4;
-/*
+/**
  * Cette classe à pour but de déterminer dans quelle colonne on joue en fonction des coordonnées du clique de la souris
+ * 
  * Elle contient les méthodes :
  * - getCoordCol() : crée un tableau contenant les coordonnées X pour chaque colonne
  * - mousePressed(MouseEvent e) : parcourt le tableau obtenu grâce à getCoordCol() et vérifie si on est dans
  *   l'intervalle [tab[i], tab[i + DIM_CASE]. Si c'est le cas elle appelle à JoueurJoue(i) du modèle et à joue(i) du Canvas
+ * 
+ * @author Julien | Hugo
+ * @see GrillePuiss4Canvas
+ *
  */
 public class grillePuiss4Listener extends MouseAdapter {
 

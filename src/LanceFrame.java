@@ -1,6 +1,8 @@
-//import puisQuatre.Puis4;
-/*
- * Main permettant le lancement de l'application
+/**
+ * Classe permettant le lancement de l'application
+ * 
+ * @author Julien | Hugo
+ * @see MenuFrame
  */
 public class LanceFrame {
 

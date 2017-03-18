@@ -11,14 +11,16 @@ import javax.swing.SwingConstants;
 
 import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
-
+/**
+ * Boite de dialogue qui affiche les règles du puissance 4
+ * 
+ * elle recupère les règles du jeu depuis la page wikipédia française
+ * et les affiches dans un label
+ * 
+ * @author Julien | Hugo
+ * 
+ */
 public class RegleDialog extends JDialog{
-	/**
-	 * Boite de dialogue qui affiche les rÃ¨gles du puissance 4
-	 * 
-	 * elle recupÃ¨re les rÃ¨gles du jeu depuis la page wikipÃ©dia franÃ§aise
-	 * et les affiches dans un label
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public RegleDialog(Frame fenetre) {

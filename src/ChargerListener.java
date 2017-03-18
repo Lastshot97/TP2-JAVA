@@ -3,10 +3,11 @@ import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
-//import puisQuatre.Puis4;
-/*
- * Cette classe permet d'associé un Listener au bouton "Charger une partie" du menu prinicpale
- * Rôle : récupérer une éventuelle sauvegarde et lancer le jeu depuis cette dernière
+/**
+ * Ecouteur du boutton permettant de charger la dernière partie sauvegarder
+ * 
+ * @author Julien | Hugo
+ *
  */
 public class ChargerListener implements ActionListener {
 
