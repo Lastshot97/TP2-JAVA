@@ -3,10 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="puis4.jar"/>
-<<<<<<< HEAD
-	<classpathentry kind="lib" path="C:/Users/PC/workspace/TP2-puissance4/jsoup-1.10.2.jar"/>
-=======
-	<classpathentry kind="lib" path="C:/Users/Hugo/Documents/FAC_Info/Semestre_4/Java/TP2-JAVA/jsoup-1.10.2.jar"/>
->>>>>>> 91a245c0bd1bfe6ced39ba23639c16457c09292d
+	<classpathentry kind="lib" path="jsoup-1.10.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
