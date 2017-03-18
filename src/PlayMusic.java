@@ -3,11 +3,11 @@ import java.io.BufferedInputStream;
 import java.io.InputStream;
 
 import javax.sound.sampled.*;
-/*
- * Cette classe gère la musique du menu principale
- * Elle est composée des méthodes :
- * - init() : permet de récupérer une instance de Clip
- * - play(String nomFichier, Boolean jouerEnContinue) : permet de jouer un morceau donné en continu ou non
+/**
+ * Classe permettant de jouer de la musique
+ * 
+ * @author Julien | Hugo
+ *
  */
 public class PlayMusic {
 	private static Clip clip;

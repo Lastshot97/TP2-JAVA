@@ -7,13 +7,16 @@ import java.awt.Rectangle;
 import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 
-//import puisQuatre.Puis4;
-/*
+/**
  * Cette classe permet la représentation graphique de la grille 
+ * 
  * Elle est constituée des méthodes :
  * - paint() : calcul les coordonnées (X, Y) de la grille et dessine la grille
  * - grille(int colonneJouer, int ligneJouer) : dessine la grille et les pions s'y trouvant sauf celui aux coordonnées (colonneJouer, ligneJouer)
  * - joue(int colonne) : dessine un pion à différent intervalle sur l'axe des Y afin de simuler la chute d'un jeton
+
+ * @author Julien | Hugo
+ *
  */
 public class GrillePuiss4Canvas extends Canvas {
 	private static final long serialVersionUID = 1L;

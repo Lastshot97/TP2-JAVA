@@ -1,10 +1,12 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-//import puisQuatre.Puis4;
-/*
- * Cette classe associe un Listener au bouton "rejouer" de la fenêtre de dialogue victoire/défaite
- * Rôle : fermer la boîte de dialogue et relancer une partie avec les mêmes paramètres
+/**
+ * Ecouteur permettant de relançer une partie après que la fin de la précedente
+ * 
+ * @author Julien | Hugo
+ * @see Puis4Dialog
+ *
  */
 public class replayGame implements ActionListener {
 

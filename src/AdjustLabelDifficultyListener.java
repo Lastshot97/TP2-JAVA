@@ -5,9 +5,14 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-/*
+/**
+ * Ecouteur de la scrollBar qui gère la difficultée
+ * 
  * Cette classe à pour but de modifier l'image du label "getDifficulte" en fonction de la valeur du scrollbar "setDifficulte"
  * La difficulté est fixé à 5 maximum
+ * 
+ * @author Julien | Hugo
+ *
  */
 public class AdjustLabelDifficultyListener implements AdjustmentListener {
 

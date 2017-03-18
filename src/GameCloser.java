@@ -1,8 +1,10 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-/*
- * Cette classe permet d'associé un Listener au bouton "fermer" de la fenêtre de victoire (ou défaite)
- * Rôle : quitter l'application
+/**
+ * Ecouteur qui provoque l'arret totale du jeu
+ * 
+ * @author Julien | Hugo
+ *
  */
 public class GameCloser implements ActionListener {
 

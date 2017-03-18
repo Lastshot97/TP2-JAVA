@@ -6,9 +6,11 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JScrollBar;
 
-//import puisQuatre.Puis4;
-/*
- * Cette classe associe un Listener au bouton "Nouvelle Partie" du menu principale
+/**
+ * Ecouteur permettant de lancer une nouvelle partie depuis la fenêtre de dialogue des paramètres
+ * 
+ * @author Julien | Hugo
+ *
  */
 public class NewGameFromMenuListener implements ActionListener {
 

@@ -4,9 +4,15 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-//import puisQuatre.Puis4;
-/*
- * Fenêtre du sous menu "nouvelle partie" permettant d'accéder au paramètre de la grille et au niveau de difficulté
+/**
+ * Fenetre de dialogue permettant de choisir les paramètres d'une nouvelles partie
+ * 
+ * les deux paramètres réglables sont :
+ * - la difficulté de l'ordinateur
+ * - les dimensions de la grille
+ * 
+ * @author Julien | Hugo
+ *
  */
 public class NewGameDialog extends JDialog {
 

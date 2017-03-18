@@ -3,12 +3,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-//import puisQuatre.Puis4;
-/*
- * Cette classe permet d'associé un Listener au bouton "Nouvelle Partie" du menu principale
- * Rôle : lancer la fenêtre de sous menu
- */
-public class ButtonNewGameListener implements ActionListener {
+/**
+ * Ecouteur du boutton permettant de choisir les <em>paramètres</em> de la partie à lancer
+ * 
+ * @author Julien | Hugo
+ *
+ */class ButtonNewGameListener implements ActionListener {
 
 	private Puis4 modele;
 	private Frame menu;

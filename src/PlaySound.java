@@ -2,9 +2,14 @@ import java.io.BufferedInputStream;
 import java.io.InputStream;
 
 import javax.sound.sampled.*;
-/*
- * Cette classe gère la musique de la fenêtre de jeu
- * Elle est constituée de la méthode play(String fichier) qui permet de jouer la musique donnée
+/**
+ * Classe permettant de jouer un son 
+ * 
+ * le son doit être suffisament court pour ne pas risquer d'en chevaucher un autre
+ * 
+ * @author Julien | Hugo
+ * @see PlayMusic
+ *
  */
 public class PlaySound {
 	

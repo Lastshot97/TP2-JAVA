@@ -1,8 +1,11 @@
 import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.Image;
-/*
- * Cette classe sert à dessiner le fond d'écran pour le menu principale
+/**
+ * classe qui affiche une image en tant que fond d'écran contenue dans un canvas
+ * 
+ * @author Julien | Hugo
+ * @see MenuFrame
  */
 public class ImageCanvas extends Canvas{
 
