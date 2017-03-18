@@ -25,7 +25,7 @@ public class RegleDialog extends JDialog{
 
 	public RegleDialog(Frame fenetre) {
 		super(fenetre);
-		this.setTitle("Règles");
+		this.setTitle("RÃ¨gles");
 		this.setSize(400, 350);
 		this.setBackground(Color.LIGHT_GRAY);
 		this.setLayout(new BorderLayout());
@@ -44,8 +44,8 @@ public class RegleDialog extends JDialog{
 			res = "erreur lors du chargement";
 		}
 		
-		res = "<html>" + res + "</html>";  // permet aux labels de gerer automatiquement les retours à la ligne 
-		JLabel titre = new JLabel("Les règles officielles :");
+		res = "<html>" + res + "</html>";  // permet aux labels de gerer automatiquement les retours Ã  la ligne 
+		JLabel titre = new JLabel("Les rÃ¨gles officielles :");
 		JLabel regle = new JLabel(res);
 		JLabel attribution = new JLabel("<html><a href='https://fr.wikipedia.org/wiki/Puissance_4'>Wikipedia</a></html>");
 		titre.setFont(new Font("Verdana", Font.BOLD, 18));
