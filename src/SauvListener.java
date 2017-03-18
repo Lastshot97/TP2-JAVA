@@ -4,6 +4,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
+import puisQuatre.Puis4;
+
 /**
  * Classe permettant de sauvegarder le cour actuelle de la partie
  * 

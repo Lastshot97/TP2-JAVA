@@ -3,6 +3,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import puisQuatre.Puis4;
+
 /**
  * Fenêtre principale du jeu
  * 

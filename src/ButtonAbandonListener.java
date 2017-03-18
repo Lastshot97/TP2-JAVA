@@ -1,6 +1,8 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import puisQuatre.Puis4;
+
 /**
  * Ecouteur du boutton permettant de relancer une partie avec les même paramètres
  * 

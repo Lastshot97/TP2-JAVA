@@ -1,6 +1,8 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import puisQuatre.Puis4;
+
 /**
  * Ecouteur qui permet de passer de la fenêtre de jeu au menu
  * 

@@ -1,5 +1,7 @@
 
 import java.awt.event.*;
+
+import puisQuatre.Puis4;
 /**
  * Cette classe à pour but de déterminer dans quelle colonne on joue en fonction des coordonnées du clique de la souris
  * 

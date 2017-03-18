@@ -1,6 +1,8 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import puisQuatre.Puis4;
+
 /**
  * Ecouteur permettant de relançer une partie après que la fin de la précedente
  * 

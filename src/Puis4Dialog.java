@@ -3,6 +3,9 @@ import java.awt.Button;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+
+import puisQuatre.Puis4;
+
 //import puisQuatre.Puis4;
 import java.awt.Dialog;
 import java.awt.Image;
