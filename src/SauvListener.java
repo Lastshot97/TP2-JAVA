@@ -27,7 +27,7 @@ public class SauvListener implements ActionListener {
 			oos = new ObjectOutputStream(new FileOutputStream("sauvegarde.pw4"));
 			oos.writeObject(modele);
 			oos.close();
-			//PlaySound.sauvegarde();
+			PlaySound.sauvegarde();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}		
