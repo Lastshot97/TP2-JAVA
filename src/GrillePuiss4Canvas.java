@@ -83,6 +83,7 @@ public class GrillePuiss4Canvas extends Canvas {
 		if (modele.estTermine()){
 			// On test si la partie est terminé après avoir joué, si c'est le cas on appelle la fenêtre de victoire (ou défaite)
 			new Puis4Dialog(frame,modele,this);
+			Logger.log(Logger.IMPORTANT, "Lancement fenêtre de victoire/défaite");
 		} 
 	}
 	
