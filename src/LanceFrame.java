@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 import puisQuatre.Puis4;
 
 /**
@@ -9,7 +12,11 @@ import puisQuatre.Puis4;
 public class LanceFrame {
 
 	public static void main(String[] args) {
-		new Logger();
+		try {
+			new Logger(Logger.ALL,new PrintWriter("LogPuissance4"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 		Logger.log(Logger.INFO, "lancement du jeu");
 		PlayMusic.init();
 		Puis4 modele = new Puis4(7, 8, 1);

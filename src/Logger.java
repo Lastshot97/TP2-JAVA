@@ -1,6 +1,10 @@
 
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.PrintWriter;
+import java.util.StringTokenizer;
 
 public class Logger {
 	// Attributes
@@ -21,6 +25,15 @@ public class Logger {
 	public Logger(int level, PrintWriter pw){
 		Logger.level = level;
 		flotSortie = pw;
+	}
+	
+	public Logger(String name) throws Exception {
+		BufferedReader br = new BufferedReader(new FileReader(name));
+		String ligne = br.readLine();
+		StringTokenizer tk = new StringTokenizer(ligne, " ");;	
+		
+		level = Integer.valueOf(tk.nextToken());
+		flotSortie = new PrintWriter(tk.nextToken());
 	}
 	
 	public static void log(int level, String message){
