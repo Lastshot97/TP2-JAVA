@@ -1,7 +1,4 @@
-
-
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
@@ -30,11 +27,11 @@ public class Logger {
 	public Logger(String name) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(name));
 		String ligne = br.readLine();
-		StringTokenizer tk = new StringTokenizer(ligne, " ");;	
+		StringTokenizer tk = new StringTokenizer(ligne, "\t");;	
 		
 		String arg1 = tk.nextToken();
 		String arg2 = tk.nextToken();
-		
+
 		switch (arg1){
 		case "ALL" :
 			level = ALL;
@@ -65,6 +62,7 @@ public class Logger {
 		default :
 			flotSortie = new PrintWriter(arg2);
 		}
+		br.close();
 	}
 	
 	public static void log(int level, String message){

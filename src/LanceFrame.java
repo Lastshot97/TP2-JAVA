@@ -1,5 +1,4 @@
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 
 import puisQuatre.Puis4;
 
@@ -13,8 +12,11 @@ public class LanceFrame {
 
 	public static void main(String[] args) {
 		try {
-			new Logger(Logger.ALL,new PrintWriter("LogPuissance4"));
+			new Logger("config1.txt");
 		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Logger.log(Logger.INFO, "lancement du jeu");
