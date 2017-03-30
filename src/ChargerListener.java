@@ -27,9 +27,9 @@ public class ChargerListener implements ActionListener {
 			new Puiss4Frame((Puis4) ois.readObject());
 			ois.close();
 			menuFrame.dispose();  // on ferme la fenetre seulement si le chargement est réussi
+			Logger.log(Logger.DEBUG, "chargement d'une partie precedente");
 		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("erreur lors du chargement");
+			Logger.log(Logger.IMPORTANT, "echec du chargement" + e);;
 		} 
 	}
 

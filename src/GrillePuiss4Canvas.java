@@ -45,6 +45,7 @@ public class GrillePuiss4Canvas extends Canvas {
 	}
 	
 	public void paint(Graphics g) {
+		Logger.log(Logger.ALL, "rafraichissement de la grille");
 	    this.setBackground(Color.BLACK);
 		DIM_CASE = (((this.getWidth() / modele.getNbColonnes()) + (this.getHeight() / modele.getNbLignes())) / 3) ;
 		coordXgrille = ((this.getWidth() - (modele.getNbColonnes() * DIM_CASE)) / 2);
@@ -61,8 +62,10 @@ public class GrillePuiss4Canvas extends Canvas {
 		
 		if (estJoueur){
 			pion = Color.RED;
+			Logger.log(Logger.INFO, "le joueur rouge joue à la ligne : " + ligne);
 		}else{
 			pion = Color.YELLOW;
+			Logger.log(Logger.INFO, "le joueur rouge joue à la ligne : " + ligne);
 		}
 
 		for (int y = coordYgrille; y < coordYgrille + ligne * DIM_CASE; y += (3*DIM_CASE) / 4){

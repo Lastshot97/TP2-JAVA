@@ -21,6 +21,7 @@ public class ButtonAbandonListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent a) {
+		Logger.log(Logger.DEBUG, "abandon du joueur");
 		modele.nouveauJeu(modele.getNbColonnes(), modele.getNbLignes(), modele.getNiveauJeu());
 		grille.repaint();
 	}

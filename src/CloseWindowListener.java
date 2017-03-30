@@ -16,6 +16,7 @@ public class CloseWindowListener extends WindowAdapter {
 	}
 	
 	public void windowClosing (WindowEvent e){
+		Logger.log(Logger.DEBUG, "fermeture de la fenêtre : " + fenetre);
 		fenetre.dispose();
 	}
 
