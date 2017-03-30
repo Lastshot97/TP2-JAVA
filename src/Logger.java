@@ -30,7 +30,7 @@ public class Logger {
 	public Logger(String name) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(name));
 		String ligne = br.readLine();
-		StringTokenizer tk = new StringTokenizer(ligne, " ");;	
+		StringTokenizer tk = new StringTokenizer(ligne, "\t");;	
 		
 		String arg1 = tk.nextToken();
 		String arg2 = tk.nextToken();

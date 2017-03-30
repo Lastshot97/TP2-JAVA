@@ -1,1 +1,1 @@
-DEBUG 	System.err
+DEBUG	System.err
