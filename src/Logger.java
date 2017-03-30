@@ -4,11 +4,11 @@ import java.io.PrintWriter;
 
 public class Logger {
 	// Attributes
-	private final static int ALL = 0;
-	private final static int DEBUG = 100;
-	private final static int INFO = 500;
-	private final static int IMPORTANT = 900;
-	private final static int OFF = Integer.MAX_VALUE;
+	public final static int ALL = 0;
+	public final static int DEBUG = 100;
+	public final static int INFO = 500;
+	public final static int IMPORTANT = 900;
+	public final static int OFF = Integer.MAX_VALUE;
 	
 	private static int level;
 	private static PrintWriter flotSortie;
