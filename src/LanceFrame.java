@@ -12,7 +12,7 @@ public class LanceFrame {
 
 	public static void main(String[] args) {
 		try {
-			new Logger("config1.txt");
+			new Logger("config2.txt");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
