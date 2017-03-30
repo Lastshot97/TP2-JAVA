@@ -30,7 +30,7 @@ public class PlaySound {
 	}
 	public static void jeton(){
 		play("Menu Selection Click.wav");
-		Logger.log(Logger.DEBUG, "Joue musique jeton");
+		Logger.log(Logger.ALL, "Joue musique jeton");
 	}
 	public static void boutton() {
 		play("boutton.wav");	

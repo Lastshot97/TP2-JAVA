@@ -27,7 +27,7 @@ public class Logger {
 		if (level >= Logger.level){
 			flotSortie.println(message);
 			flotSortie.flush();
-			flotSortie.close();
+	
 		} 
 	}
 }
