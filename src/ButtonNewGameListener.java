@@ -24,8 +24,10 @@ import puisQuatre.Puis4;
 	public void actionPerformed(ActionEvent arg0) {
 		try {
 			new NewGameDialog(menu, modele);
+			Logger.log(Logger.DEBUG, "nouvelle partie");
 		} catch (IOException e) {
-			e.printStackTrace();
+			Logger.log(Logger.IMPORTANT, "echec de la création d'une fenetre de dialog"
+			+ "permettant de lancer une partie" + e);
 		}
 	}
 

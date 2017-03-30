@@ -20,6 +20,7 @@ public class GameCloser implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		principalFrame.dispose();
 		dialogFrame.dispose();
+		Logger.log(Logger.DEBUG, "arret totale du jeu");
 	}
 
 }

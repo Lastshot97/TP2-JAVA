@@ -18,6 +18,7 @@ public class ImageCanvas extends Canvas{
 	}
 	
 	public void paint(Graphics g){
+		Logger.log(Logger.ALL, "affichage d'une image en tant que fond d'écran");
 		g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
 	}
 }

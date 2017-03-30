@@ -42,15 +42,16 @@ public class grillePuiss4Listener extends MouseAdapter {
 		for (int i = 0; i < tabCoord.length; i++){
 			if (coordXsouris >= tabCoord[i] && coordXsouris <= tabCoord[i] + DimCase){
 				if(modele.estPossibleJouer(i)){
+					Logger.log(Logger.DEBUG, "clique à la colone : " + i + " coordonnée : " + coordXsouris);
 					modele.joueurJoue(i);
 					estFini = modele.estJoueurGagne();
 					try {					
 						grille.joue(i,true);
 						if (!estFini){ // Comme le joueur joue avant, on test si il a gagné avant de faire jouer le programme
-						grille.joue(modele.progJoue(), false);
+							grille.joue(modele.progJoue(), false);
 						}
 					} catch (Exception e1) {
-						e1.printStackTrace();
+						Logger.log(Logger.IMPORTANT, "echec un joueur n'as pas pu jouer" + e);;
 					}		
 				}
 			}

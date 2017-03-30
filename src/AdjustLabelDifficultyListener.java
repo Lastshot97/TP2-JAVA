@@ -24,6 +24,7 @@ public class AdjustLabelDifficultyListener implements AdjustmentListener {
 
 	@Override
 	public void adjustmentValueChanged(AdjustmentEvent a) {
+		Logger.log(Logger.ALL, "changement du niveau de difficultée = " + a.getValue());
 		try{
 		switch (a.getValue()) {
 		case 1 :
