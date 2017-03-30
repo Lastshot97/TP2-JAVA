@@ -32,8 +32,39 @@ public class Logger {
 		String ligne = br.readLine();
 		StringTokenizer tk = new StringTokenizer(ligne, " ");;	
 		
-		level = Integer.valueOf(tk.nextToken());
-		flotSortie = new PrintWriter(tk.nextToken());
+		String arg1 = tk.nextToken();
+		String arg2 = tk.nextToken();
+		
+		switch (arg1){
+		case "ALL" :
+			level = ALL;
+			break;
+		case "DEBUG" :
+			level = DEBUG;
+			break;
+		case "INFO" :
+			level = INFO;
+			break;
+		case "IMPORTANT" :
+			level = IMPORTANT;
+			break;
+		case "OFF" :
+			level = OFF;
+			break;
+			default :
+				System.err.println("Erreur : argument n°1 invalide");
+		}
+		
+		switch (arg2){
+		case "System.err" :
+			flotSortie = new PrintWriter(System.err);
+			break;
+		case "System.out" :
+			flotSortie = new PrintWriter(System.out);
+			break;
+		default :
+			flotSortie = new PrintWriter(arg2);
+		}
 	}
 	
 	public static void log(int level, String message){
