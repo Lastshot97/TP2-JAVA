@@ -10,8 +10,8 @@ public class Logger {
 	private final static int IMPORTANT = 900;
 	private final static int OFF = Integer.MAX_VALUE;
 	
-	private int level;
-	private PrintWriter flotSortie;
+	private static int level;
+	private static PrintWriter flotSortie;
 
 	public Logger(){
 		level = DEBUG;
@@ -19,21 +19,15 @@ public class Logger {
 	}
 	
 	public Logger(int level, PrintWriter pw){
-		this.level = level;
+		Logger.level = level;
 		flotSortie = pw;
 	}
 	
-	public void log(int level, String message){
-		if (level >= this.level){
+	public static void log(int level, String message){
+		if (level >= Logger.level){
 			flotSortie.println(message);
 			flotSortie.flush();
 			flotSortie.close();
 		} 
 	}
-	
-	public static void main(String[] args) {
-		Logger log = new Logger();
-		log.log(150, "le joueur 1 � gagn�");
-	}
-
 }
