@@ -11,6 +11,8 @@ import javax.swing.SwingConstants;
 
 import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
+
+
 /**
  * Boite de dialogue qui affiche les règles du puissance 4
  * 
@@ -40,8 +42,7 @@ public class RegleDialog extends JDialog{
 			}
 			
 		} catch (IOException e) {
-			e.printStackTrace();
-			res = "erreur lors du chargement";
+			Logger.log(Logger.IMPORTANT, "Erreur lors du chargement des données Wikipédia" + e);
 		}
 		
 		res = "<html>" + res + "</html>";  // permet aux labels de gerer automatiquement les retours Ã  la ligne 

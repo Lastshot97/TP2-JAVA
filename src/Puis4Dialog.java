@@ -38,14 +38,15 @@ public class Puis4Dialog extends Dialog{
 			tryAgain = ImageIO.read(this.getClass().getResourceAsStream("TryAgain.jpg"));
 			winner = ImageIO.read(this.getClass().getResourceAsStream("YouWin.jpg"));
 		} catch (IOException e){
-			System.err.println("Erreur lors de la lecture des images de la classe PuisDialog");
-			e.printStackTrace();
+			Logger.log(Logger.IMPORTANT, "Erreur lors de la lecture des images de la classe PuisDialog" + e);
 		}
 		if (modele.estJoueurGagne()){
+			Logger.log(Logger.IMPORTANT,"Le joueur gagane");
 			PlayMusic.play("win.wav", false);  // TODO implementer
 			endGame = new JLabel(new ImageIcon(winner));	// FIXME mettre une valeur local	
 			this.setSize(280,270);
 		} else{
+			Logger.log(Logger.IMPORTANT,"Le joueur perd");
 			PlayMusic.play("lose.wav", false);  //TODO implementer
 			endGame = new JLabel(new ImageIcon(tryAgain));
 			this.setSize(420,270);

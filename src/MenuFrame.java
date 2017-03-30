@@ -61,7 +61,7 @@ public class MenuFrame extends Frame {
 			Image icon = ImageIO.read(this.getClass().getResourceAsStream("icon.PNG"));
 			this.setIconImage(icon);
 		} catch(IOException e){
-			e.printStackTrace();
+			Logger.log(Logger.IMPORTANT, "Echec du chargement de l'image 'icon.PNG' " + e);
 		}
 		
 		// change le fond de la fenetre
@@ -71,7 +71,7 @@ public class MenuFrame extends Frame {
 			ic.setSize(LARGEUR, HAUTEUR);
 			this.add(ic);
 		} catch(IOException e){
-			e.printStackTrace();
+			Logger.log(Logger.IMPORTANT, "Echec du chargement de l'image 'fond.PNG' " + e);
 		}		
 		
 	    this.addWindowListener(new CloseWindowListener(this));

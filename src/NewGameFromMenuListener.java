@@ -31,7 +31,8 @@ public class NewGameFromMenuListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-
+		Logger.log(Logger.DEBUG, "Click sur Jouer 'Fenêtre nouvelle partie' ");
+		
 		new Puiss4Frame (new Puis4(
 				Integer.parseInt(
 						String.valueOf(
@@ -41,8 +42,15 @@ public class NewGameFromMenuListener implements ActionListener {
 								((String) tailleGrille.getSelectedItem()).charAt(4))),
 				difficulte.getValue()
 				));
-		menu.dispose();
+		
+		menu.dispose(); 
+		Logger.log(Logger.DEBUG, "Fermeture du Menu principale");
 	    dialog.dispose();
+	    Logger.log(Logger.DEBUG, "Fermeture de la fenêtre de dialogue 'nouvelle partie' ");
+	    Logger.log(Logger.DEBUG, 
+	    		"Nouvelle partie. Difficulté : " + difficulte.getValue() + 
+	    		" - Taille grille : " + ((String) tailleGrille.getSelectedItem()).charAt(0) + "x" + 
+	    				((String) tailleGrille.getSelectedItem()).charAt(4) );
 	}
 
 }

@@ -24,8 +24,11 @@ public class replayGame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		Logger.log(Logger.DEBUG, "Click sur le bouton 'rejouer' ");
 		dialogFrame.dispose();
+		Logger.log(Logger.DEBUG, "Fermeture de la fenêtre de dialogue");
 		modele.nouveauJeu(modele.getNbColonnes(), modele.getNbLignes(),modele.getNiveauJeu());
+		Logger.log(Logger.DEBUG, "Nouvelle partie. Difficulté : " + modele.getNiveauJeu() + " - Taille grille : " + modele.getNbColonnes() + "x" + modele.getNbLignes());
 		PlayMusic.play("jeu.wav", true);
 		grille.repaint();	
 	}

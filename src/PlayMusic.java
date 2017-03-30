@@ -31,7 +31,8 @@ public class PlayMusic {
 				clip.loop(Clip.LOOP_CONTINUOUSLY);
 			}else{
 				clip.start();
-			}
+				Logger.log(Logger.DEBUG, "Lancement de la musique : " + nomFichier);
+			} 
 			
 		} catch (NullPointerException e) {
 			e.printStackTrace();
@@ -44,5 +45,6 @@ public class PlayMusic {
 		clip.stop();
 		clip.flush();
 		clip.close();
+		Logger.log(Logger.DEBUG, "Arrêt de la musique");
 	}
 }

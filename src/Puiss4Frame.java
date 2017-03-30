@@ -40,15 +40,14 @@ public class Puiss4Frame extends Frame  {
 			Image icon = ImageIO.read(this.getClass().getResourceAsStream("icon.PNG"));
 			this.setIconImage(icon);
 		} catch(IOException e){
-			e.printStackTrace();
+			Logger.log(Logger.IMPORTANT, "Erreur lors du chargement de l'image 'icon.PNG' " + e);
 		}
 
 		Image imageFontCanvas = null;
 		try{
 			imageFontCanvas = ImageIO.read(this.getClass().getResourceAsStream("puissance4.jpg"));
 		} catch(IOException e){
-			System.err.println("Erreur lors du chargement de l'image de font du canvas : Puiss4Frame");
-			e.printStackTrace();
+			Logger.log(Logger.IMPORTANT, "Erreur lors du chargement de l'image de font du canvas : Puiss4Frame" + e);
 		}
 		
 		GrillePuiss4Canvas grille = new GrillePuiss4Canvas(modele, this, imageFontCanvas);	

@@ -16,7 +16,9 @@ public class RegleListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		Logger.log(Logger.DEBUG, "Click sur le bouton 'régle' ");
 		new RegleDialog(menuFrame);
+		Logger.log(Logger.DEBUG, "Ouverture de la fenêtre de dialogue concernant les régles du jeu");
 	}
 
 }

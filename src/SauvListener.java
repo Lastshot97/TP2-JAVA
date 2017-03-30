@@ -24,6 +24,7 @@ public class SauvListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		Logger.log(Logger.DEBUG, "Click sur 'Charger partie' ");
 		ObjectOutputStream oos;
 		try {
 			oos = new ObjectOutputStream(new FileOutputStream("sauvegarde.pw4"));
@@ -31,7 +32,7 @@ public class SauvListener implements ActionListener {
 			oos.close();
 			PlaySound.sauvegarde();
 		} catch (IOException e) {
-			e.printStackTrace();
+			Logger.log(Logger.IMPORTANT, "Echec de la récupération de la sauvegarde");
 		}		
 	}
 
