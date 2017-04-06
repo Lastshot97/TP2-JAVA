@@ -76,7 +76,7 @@ public class Puiss4Frame extends Frame  {
 	    
 	    abandonner.addActionListener(new ButtonAbandonListener(modele, grille));
 	    goMenu.addActionListener(new goMenuListener(this, modele));
-	    sauvegarger.addActionListener(new SauvListener(modele));
+	    sauvegarger.addActionListener(new ChoixSauvListener(this, modele));
 	    grille.addMouseListener(new grillePuiss4Listener(modele, grille)); 
 	    this.addWindowListener(new CloseWindowListener(this));
 	    
