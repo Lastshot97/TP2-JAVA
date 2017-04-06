@@ -42,11 +42,14 @@ public class ChargerDialog extends Dialog {
 		this.setLayout(new BorderLayout());
 
 		Label text = new Label("Choissiser le nom de la sauvegarde à charger");
+		text.setForeground(Color.WHITE);
 
 		Choice nomSauv = new Choice();
 		ajouterFichierSauvegarde(nomSauv);
 		
 		Button charger = new Button("Charger");
+		charger.setForeground(Color.CYAN);
+		charger.setBackground(new Color(11, 13, 64));
 		charger.addActionListener(new ChargerListener(fenetreMenu, nomSauv));
 
 		this.add(text, BorderLayout.NORTH);
@@ -54,7 +57,8 @@ public class ChargerDialog extends Dialog {
 		this.add(charger, BorderLayout.SOUTH);
 
 		this.addWindowListener(new CloseWindowListener(this));
-
+		
+		this.setBackground(Color.DARK_GRAY);
 		this.setVisible(true);
 	}
 }

@@ -25,19 +25,25 @@ public class SauvDialog extends Dialog {
 		this.setResizable(true);
 		this.setLayout(new GridLayout(3, 1));
 		
-		Label difficulte = new Label("Choissiser le nom de votre sauvegarde");
+		Label nomSauv = new Label("Choissiser le nom de votre sauvegarde");
+		nomSauv.setForeground(Color.WHITE);
 		
 		TextField selectNomSauv = new TextField();
+		selectNomSauv.setBackground(Color.BLACK);
+		selectNomSauv.setForeground(Color.LIGHT_GRAY);
 		
-		Button jouer = new Button("Sauvegarder");
-		jouer.addActionListener(new SauvListener(this, modele, selectNomSauv));
+		Button sauvegarder = new Button("Sauvegarder");
+		sauvegarder.addActionListener(new SauvListener(this, modele, selectNomSauv));
+		sauvegarder.setBackground(Color.LIGHT_GRAY);
+		sauvegarder.setForeground(Color.BLACK);
 				
-		this.add(difficulte);
+		this.add(nomSauv);
 		this.add(selectNomSauv);
-		this.add(jouer);
+		this.add(sauvegarder);
 		
 		this.addWindowListener(new CloseWindowListener(this));
 		
+		this.setBackground(Color.GRAY);
 		this.setVisible(true);
 	}
 }
