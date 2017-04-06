@@ -4,11 +4,7 @@ import java.io.IOException;
 import puisQuatre.Puis4;
 
 /**
- * Fenetre de dialogue permettant de choisir les paramètres d'une nouvelles partie
- * 
- * les deux paramètres réglables sont :
- * - la difficulté de l'ordinateur
- * - les dimensions de la grille
+ * Fenetre de dialogue permettant de choisir le nom du fichier de sauvegarde
  * 
  * @author Julien | Hugo
  *
