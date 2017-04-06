@@ -16,7 +16,6 @@ public class LanceFrame {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Logger.log(Logger.INFO, "lancement du jeu");
