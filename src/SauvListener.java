@@ -31,7 +31,6 @@ public class SauvListener implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 		ObjectOutputStream oos;
 		String nomSauv = selectNomSauv.getText();
-		System.out.println("wow : " + nomSauv);
 		try {
 			// traite les noms de fichiers invalides
 			if(nomSauv.length() < 1){ 

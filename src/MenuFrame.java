@@ -54,7 +54,7 @@ public class MenuFrame extends Frame {
 		charger.setBackground(new Color(11, 13, 64));
 		charger.setFont(f);
 		this.add(charger);
-		charger.addActionListener(new ChargerListener(this));
+		charger.addActionListener(new ChoixChargerListener(this));
 		
 		// change l'icone de la fenetre
 		try{
