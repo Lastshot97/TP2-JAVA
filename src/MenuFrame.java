@@ -36,6 +36,7 @@ public class MenuFrame extends Frame {
 		jouer.setLocation(370, 277);
 		jouer.setSize(150, 50);
 		jouer.setBackground(new Color(32, 40, 191));
+		jouer.setForeground(Color.WHITE);
 		jouer.setFont(f);
 		this.add(jouer);
 	    jouer.addActionListener(new ButtonNewGameListener(this, modele));
@@ -44,17 +45,28 @@ public class MenuFrame extends Frame {
 		regle.setLocation(370, 370);
 		regle.setSize(150, 50);
 		regle.setBackground(new Color(21, 27, 127));
+		regle.setForeground(Color.WHITE);
 		regle.setFont(f);
 		this.add(regle);
 		regle.addActionListener(new RegleListener(this));
 	    
 		Button charger = new Button ("Charger une partie");		
-		charger.setLocation(370, 462);
+		charger.setLocation(220, 462);
 		charger.setSize(150, 50);
 		charger.setBackground(new Color(11, 13, 64));
+		charger.setForeground(Color.WHITE);
 		charger.setFont(f);
 		this.add(charger);
 		charger.addActionListener(new ChoixChargerListener(this));
+		
+		Button supprimSauv = new Button ("supprimer les sauvegardes");		
+		supprimSauv.setLocation(525, 462);
+		supprimSauv.setSize(175, 50);
+		supprimSauv.setBackground(new Color(5, 6, 35));
+		supprimSauv.setForeground(Color.RED);
+		supprimSauv.setFont(f);
+		this.add(supprimSauv);
+		supprimSauv.addActionListener(new SupprimeSauvListener());
 		
 		// change l'icone de la fenetre
 		try{

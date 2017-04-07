@@ -19,23 +19,27 @@ public class SauvDialog extends Dialog {
 		this.setSize(400,300);
 		this.setLocationRelativeTo(fenetreJeu);
 		this.setResizable(true);
-		this.setLayout(new GridLayout(3, 1));
+		this.setLayout(new BorderLayout());
 		
 		Label nomSauv = new Label("Choissiser le nom de votre sauvegarde");
 		nomSauv.setForeground(Color.WHITE);
 		
 		TextField selectNomSauv = new TextField();
-		selectNomSauv.setBackground(Color.BLACK);
+		selectNomSauv.setBackground(Color.DARK_GRAY);
 		selectNomSauv.setForeground(Color.LIGHT_GRAY);
 		
 		Button sauvegarder = new Button("Sauvegarder");
 		sauvegarder.addActionListener(new SauvListener(this, modele, selectNomSauv));
 		sauvegarder.setBackground(Color.LIGHT_GRAY);
-		sauvegarder.setForeground(Color.BLACK);
+		sauvegarder.setForeground(Color.DARK_GRAY);
 				
-		this.add(nomSauv);
-		this.add(selectNomSauv);
-		this.add(sauvegarder);
+		Panel centre = new Panel(new GridLayout(3, 1));
+		centre.add(new Panel());
+		centre.add(selectNomSauv);
+		centre.add(new Panel());
+		this.add(nomSauv, BorderLayout.NORTH);
+		this.add(centre, BorderLayout.CENTER);
+		this.add(sauvegarder, BorderLayout.SOUTH);
 		
 		this.addWindowListener(new CloseWindowListener(this));
 		

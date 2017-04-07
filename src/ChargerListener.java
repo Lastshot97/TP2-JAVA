@@ -32,7 +32,7 @@ public class ChargerListener implements ActionListener {
 			menuFrame.dispose();  // on ferme la fenetre seulement si le chargement est réussi
 			Logger.log(Logger.DEBUG, "chargement d'une partie precedente : " + nomSauv.getSelectedItem());
 		} catch (Exception e) {
-			Logger.log(Logger.IMPORTANT, "echec du chargement" + e);;
+			Logger.log(Logger.IMPORTANT, "echec du chargement " + e);;
 		} 
 	}
 
