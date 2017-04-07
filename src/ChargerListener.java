@@ -26,11 +26,11 @@ public class ChargerListener implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 		ObjectInputStream ois;
 		try {
-			ois = new ObjectInputStream(new FileInputStream(nomSauv.getSelectedItem()));
+			ois = new ObjectInputStream(new FileInputStream(nomSauv.getSelectedItem() + ".pw4"));
 			new Puiss4Frame((Puis4) ois.readObject());
 			ois.close();
 			menuFrame.dispose();  // on ferme la fenetre seulement si le chargement est réussi
-			Logger.log(Logger.DEBUG, "chargement d'une partie precedente : " + nomSauv.getSelectedItem());
+			Logger.log(Logger.DEBUG, "chargement d'une partie precedente : " + nomSauv.getSelectedItem() + ".pw4");
 		} catch (Exception e) {
 			Logger.log(Logger.IMPORTANT, "echec du chargement " + e);;
 		} 

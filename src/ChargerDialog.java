@@ -27,7 +27,8 @@ public class ChargerDialog extends Dialog {
 	    File[] listeDesFichiers = dossier.listFiles();
 	    for ( File f : listeDesFichiers ) {
 		    if (f.isFile() && (f.getName().endsWith(".pw4"))) {
-		    	c.add(f.getName());
+		    	String nomSansExtension = (f.getName()).substring(0, (f.getName().length() - 4));
+		    	c.add(nomSansExtension);
 		    }
 	    }
 	}
